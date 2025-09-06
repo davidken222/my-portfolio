@@ -56,6 +56,20 @@ body {
 .navbar-links a:hover {
   color: #f4d03f;
 }
+/* Navbar Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
 
 /* =========================
    Sections (Base Styling)
@@ -69,6 +83,22 @@ body {
   padding: 50px;
   text-align: center;
 }
+/* General responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 20px;
+    min-height: auto; /* don’t force full screen on small devices */
+  }
+
+  .home h1 {
+    font-size: 2rem;  /* smaller title */
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+}
+
 
 /* =========================
    Home Section
@@ -294,6 +324,15 @@ body {
   pointer-events: none;
   opacity: 0.6;
 }
+@media (max-width: 768px) {
+  .project-list {
+    grid-template-columns: 1fr; /* stack cards vertically */
+  }
+
+  .project-card .preview {
+    height: 180px; /* smaller preview */
+  }
+}
 
 /* =========================
    Extra Hobbies Section
@@ -402,6 +441,56 @@ body {
 
 .ContactCard:hover i {
   color: #fff;
+}
+@media (max-width: 768px) {
+  .ContactGrid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ContactCard {
+    width: 100%;
+  }
+}
+/* Hamburger menu hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .hamburger {
+    display: block; /* show on mobile */
+  }
+
+  .navbar-links {
+    display: none;  /* hide links by default */
+    flex-direction: column;
+    gap: 15px;
+    background: #0f172a;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  }
+
+  .navbar-links.active {
+    display: flex; /* show when toggled */
+  }
+
+  .navbar-links a {
+    font-size: 1.2rem;
+    padding: 10px 0;
+  }
 }
 
 
