@@ -1,0 +1,407 @@
+/* =========================
+   General Reset
+========================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   Navbar
+========================= */
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #16213e;
+  display: flex;
+  justify-content: flex-start;  /* keep items aligned from left */
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+/* Brand */
+.navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #3b82f6;
+  letter-spacing: 0.5px;
+  margin-right: auto; /* push links away but leave David at left */
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  gap: 30px;
+  margin-right: 20%; /* pull them away from the edge, closer to center */
+}
+
+.navbar-links a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #f4d03f;
+}
+
+/* =========================
+   Sections (Base Styling)
+========================= */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  text-align: center;
+}
+
+/* =========================
+   Home Section
+========================= */
+.home {
+  background: #0f172a; /* dark navy */
+  height: 100vh; /* full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  text-align: center;
+  padding: 0 20px;
+}
+
+.name {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  color: #3b82f6; /* vibrant blue */
+  font-family: 'Poppins', sans-serif; /* modern clean font */
+  letter-spacing: 3px;
+}
+
+/* Tagline badges */
+.tagline {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tagline span {
+  background: rgba(59, 130, 246, 0.15); /* subtle blue background */
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tagline span:hover {
+  background: #3b82f6;
+  color: #fff;
+  cursor: default;
+}
+
+/* Intro text */
+.intro {
+  font-size: 1.2rem;
+  color: #e5e7eb;
+  max-width: 800px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+/* Button */
+.btn-primary {
+  background: #9b5de5;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #3b82f6; /* hover to same nice blue */
+  color: #fff;
+}
+
+/* =========================
+   About Section
+========================= */
+.About {
+  background: #0f172a;
+}
+.Section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+.SectionTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.Accent {
+  color: #9b5de5;
+}
+.SectionIntro {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e5e7eb;
+}
+
+/* About Cards */
+.CardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.Card {
+  background: #1e293b;
+  padding: 35px;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 250px;
+}
+.Card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+.Card h2 {
+  color: #f4d03f;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+.Card p {
+  color: #d1d5db;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   Projects Section
+========================= */
+.projects {
+  background: #0f172a; /* match home/contact */
+  padding: 100px 20px;
+}
+
+.blue-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #3b82f6; /* stylish blue */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Project Preview (image top) */
+.project-card .preview {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Project Content (bottom) */
+.project-card .content {
+  padding: 20px;
+  text-align: left;
+}
+.project-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+  color: #f4d03f; /* yellow title */
+}
+.project-card p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  margin-bottom: 12px;
+}
+
+/* Tags */
+.tags {
+  margin: 10px 0;
+}
+.tags span {
+  background: rgba(155, 93, 229, 0.2);
+  border: 1px solid #9b5de5;
+  color: #9b5de5;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-right: 6px;
+  font-size: 0.8rem;
+}
+
+/* Links */
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f4d03f;
+  font-weight: bold;
+  text-decoration: none;
+}
+.project-link:hover {
+  color: #fff;
+}
+.project-link.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* =========================
+   Extra Hobbies Section
+========================= */
+.hobbies-card {
+  grid-column: span 2;
+  background: url('Dobito.jpg') no-repeat center center/cover;
+  position: relative;
+  border-radius: 12px;
+  min-height: 300px;
+  color: #fff;
+  padding: 25px;
+  overflow: hidden;
+}
+.hobbies-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
+.hobbies-card h2,
+.hobbies-card p {
+  position: relative;
+  z-index: 1;
+}
+.hobbies-card h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #f4d03f;
+}
+.hobbies-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #fdfdfd;
+}
+
+/* =========================
+   Skills / Accomplishments
+========================= */
+.SkillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+.SkillsGrid span {
+  background: rgba(155, 93, 229, 0.15);
+  border: 1px solid #9b5de5;
+  color: #9b5de5;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.SkillsGrid span:hover {
+  background: #9b5de5;
+  color: #fff;
+  cursor: default;
+}
+
+/* Contact Section */
+.contact {
+  background: #0f172a;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.ContactGrid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.ContactCard {
+  background: #1e293b;
+  padding: 25px 40px;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.ContactCard i {
+  font-size: 2rem;
+  color: #3b82f6; /* nice tech blue */
+}
+
+.ContactCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  background: #2563eb;
+  color: #fff;
+}
+
+.ContactCard:hover i {
+  color: #fff;
+}
+
+
