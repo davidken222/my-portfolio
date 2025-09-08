@@ -56,20 +56,6 @@ body {
 .navbar-links a:hover {
   color: #f4d03f;
 }
-/* Navbar Responsive */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 15px 20px;
-  }
-
-  .navbar-links {
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
-  }
-}
 
 /* =========================
    Sections (Base Styling)
@@ -173,6 +159,18 @@ body {
 .btn-primary:hover {
   background: #3b82f6; /* hover to same nice blue */
   color: #fff;
+}
+@media (max-width: 500px) {
+  .tagline {
+    flex-direction: column; /* stack vertically */
+    align-items: center;    /* center them */
+    gap: 10px;              /* smaller spacing */
+  }
+
+  .tagline span {
+    width: 80%;             /* make them uniform width */
+    text-align: center;
+  }
 }
 
 /* =========================
@@ -294,7 +292,6 @@ body {
   color: #d1d5db;
   margin-bottom: 12px;
 }
-
 /* Tags */
 .tags {
   margin: 10px 0;
@@ -338,7 +335,7 @@ body {
    Extra Hobbies Section
 ========================= */
 .hobbies-card {
-  grid-column: span 2;
+  grid-column: span 2; /* full width on desktop */
   background: url('Dobito.jpg') no-repeat center center/cover;
   position: relative;
   border-radius: 12px;
@@ -347,6 +344,7 @@ body {
   padding: 25px;
   overflow: hidden;
 }
+
 .hobbies-card::before {
   content: "";
   position: absolute;
@@ -354,22 +352,34 @@ body {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
 }
+
 .hobbies-card h2,
 .hobbies-card p {
   position: relative;
   z-index: 1;
 }
+
 .hobbies-card h2 {
   font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 15px;
   color: #f4d03f;
 }
+
 .hobbies-card p {
   font-size: 1rem;
   line-height: 1.7;
   color: #fdfdfd;
 }
+
+/* ✅ Responsive fix: on mobile, stack like a normal card */
+@media (max-width: 768px) {
+  .hobbies-card {
+    grid-column: span 1;  /* stop spanning two columns */
+    min-height: auto;     /* let it shrink naturally */
+  }
+}
+
 
 /* =========================
    Skills / Accomplishments
@@ -442,55 +452,121 @@ body {
 .ContactCard:hover i {
   color: #fff;
 }
+/* Wrapper so footer always sits at the bottom */
+.ContactWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh;  /* ensures section is tall enough */
+}
+
+.contact-footer {
+  margin-top: auto;      /* push footer to bottom */
+  font-size: 0.75rem;
+  color: #9b5de5;
+  text-align: center;
+  opacity: 0.8;
+  padding-top: 20px;
+}
+
 @media (max-width: 768px) {
   .ContactGrid {
     flex-direction: column;
+    align-items: center;     /* center horizontally */
+    justify-content: center; /* center vertically if space allows */
     gap: 20px;
+    width: 100%;
   }
 
   .ContactCard {
-    width: 100%;
+    width: 90%;          /* take most of the screen */
+    max-width: 150px;    /* but don’t get too wide */
+    text-align: center;  /* center the text inside */
+    padding: 15px 20px;   /* instead of 25px 40px */
+    font-size: 1rem;      /* slightly smaller text */
   }
 }
+
 /* Hamburger menu hidden on desktop */
 .hamburger {
-  display: none;
+  display: block;
   font-size: 2rem;
   color: #3b82f6;
   cursor: pointer;
+  position: absolute;
+  left: 80%;      /* push it ~85% from the left */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;  /* keep on top of dropdown */
 }
 
-/* Mobile Navbar */
+/* =========================
+   Navbar Responsive
+========================= */
+/* Default (desktop) */
+.hamburger {
+  display: none;   /* always hidden on big screens */
+}
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px; /* always fixed height */
+    position: fixed;  /* <-- make it fixed on mobile too */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
 
   .hamburger {
-    display: block; /* show on mobile */
+    display: block;
+    font-size: 2rem;
+    color: #3b82f6;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
   }
 
   .navbar-links {
-    display: none;  /* hide links by default */
+    display: flex;
     flex-direction: column;
     gap: 15px;
     background: #0f172a;
     position: absolute;
-    top: 70px;
-    right: 0;
+    top: 70px; /* below navbar */
+    left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    z-index: 999;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
   }
 
   .navbar-links.active {
-    display: flex; /* show when toggled */
+    max-height: 400px;
+    padding: 20px;
   }
 
   .navbar-links a {
     font-size: 1.2rem;
     padding: 10px 0;
+    text-align: left; /* keep them aligned left */
   }
+}
+.contact-footer {
+  margin-top: 30px;
+  font-size: 0.75rem;  /* small text */
+  color: #9b5de5;      /* subtle purple accent */
+  text-align: center;
+  opacity: 0.8;
 }
 
 
